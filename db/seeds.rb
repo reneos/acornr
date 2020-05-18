@@ -1,3 +1,9 @@
+puts "Destroying all bookings"
+Booking.destroy_all
+
+puts "Destroying all spaces"
+Space.destroy_all
+
 puts "Destroying all users"
 User.destroy_all
 
@@ -31,3 +37,34 @@ end
 
 
 puts 'Created 20 spaces.'
+
+
+puts "About to create 20 bookings"
+
+def find_valid_user(host)
+  # make sure a host is not renting their own space
+  renter = User.all.sample
+  renter == host ? find_valid_user(host) : renter
+end
+
+def create_booking
+  start_date = Date.today + rand(1..10)
+  end_date = start_date + rand(1..30)
+  space = Space.all.sample
+  user = find_valid_user(space.user)
+  booking = Booking.new(
+    start_date: start_date,
+    end_date: end_date,
+    space: space,
+    user: user
+  )
+
+  # in case it's invalid due to date overlap
+  create_booking unless booking.save
+end
+
+20.times do
+  create_booking
+end
+
+puts "Created 20 bookings"
