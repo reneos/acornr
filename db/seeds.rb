@@ -32,6 +32,7 @@ adjectives = %w(Spacious Wide Small Big Medium Tiny Convenient Cool Superb Great
     address: Faker::Address.full_address,
     user: users.sample,
     description: Faker::Lorem.sentences(number: 8).join(' '),
+    price: (rand(1000..100000))
   )
 end
 
