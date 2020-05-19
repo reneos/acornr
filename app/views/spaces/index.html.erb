@@ -1,9 +1,16 @@
-<div class="spaces">
+<div class="row">
   <% @spaces.each do |space| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?cs=srgb&dl=round-brown-wooden-table-with-chairs-inside-room-1668860.jpg&fm=jpg)">
-      <%= space.title %>
-      <%= space.description %>
-      <%= link_to "View space", space_path(space) %>
+    <div class="col-12 col-md-4 mb-3">
+      <div class="card h-100">
+        <img class="card-img-top" src="https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?cs=srgb&dl=round-brown-wooden-table-with-chairs-inside-room-1668860.jpg&fm=jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= space.title %></h5>
+          <p class="card-text"><%= truncate(space.description, length: 24) %></p>
+          <%= link_to "View space", space_path(space) %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
+
+

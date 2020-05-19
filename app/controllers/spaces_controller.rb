@@ -19,7 +19,7 @@ class SpacesController < ApplicationController
     @space.user = current_user
     authorize @space
     if @space.save
-      redirect_to @space, notice: 'Space was successfully created.'
+      redirect_to space_path(@space), notice: 'Space was successfully created.'
     else
       render :new
     end
