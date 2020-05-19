@@ -1,10 +1,8 @@
 <%= simple_form_for(space) do |f| %>
-  <div class="form-inputs">
+  <div>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :address %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Create space", class:"button-home"%>
   </div>
 <% end %>s
