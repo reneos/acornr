@@ -7,17 +7,18 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.space = @space
+    @booking.user = currient_user
     if @booking.save
       redirect_to space_path(@space)
     else
-      render 'bookings/show'
+      render :new
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user, :space)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_space
