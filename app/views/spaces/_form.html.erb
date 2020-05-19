@@ -1,4 +1,8 @@
-<%= simple_form_for(space) do |f| %>
+<div class="container">
+  <div class="row">
+  <div class="col-md-5 offset-md-3">
+    <h1>Create Space</h1>
+  <%= simple_form_for(space) do |f| %>
   <div>
     <%= f.input :title %>
     <%= f.input :description %>
@@ -6,3 +10,6 @@
     <%= f.submit "Create space", class:"button-home"%>
   </div>
 <% end %>s
+  </div>
+  </div>
+</div>
