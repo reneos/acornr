@@ -6,10 +6,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    authorize @booking
     @booking = Booking.new(booking_params)
     @booking.space = @space
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to space_path(@space)
     else
