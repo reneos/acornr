@@ -11,49 +11,52 @@
 
     <% if @bookings.empty? %>
       <div class="col-12">
-        <div class="alert alert-info">You haven't booked any spaces yet.</div>
+        <p>You haven't booked any spaces yet.</p>
       </div>
     <% else %>
 
       <% @bookings.each do |booking| %>
-      <div class="col-12 col-md-4">
-        <div class="card border-dark mb-3">
-          <div class="card-header">Booking for: <%= booking.space.title %></div>
-          <div class="card-body text-dark">
-           <%= "#{booking.start_date} to #{booking.end_date}" %>
-           <%= link_to "View space", space_path(booking.space), class:"btn btn-primary"  %>
-          </div>
-        </div>
-      </div>
+        <%= render 'booking-card', booking: booking %>
       <% end %>
 
     <% end %>
-  </div>
 </div>
+
 
 <div class="row">
     <div class="col-12">
-      <h2>Spaces You Are Hosting</h2>
+      <h2>Spaces You're Hosting</h2>
     </div>
 
     <% if @spaces.empty? %>
       <div class="col-12">
-        <div class="alert alert-info">You currently have no spaces.</div>
+        <div class="alert">You're not currently hosting any spaces.</div>
       </div>
     <% else %>
 
-      <% @bookings.each do |booking| %>
-      <div class="col-12 col-md-4">
-        <div class="card border-dark mb-3">
-          <div class="card-header"><%= space.title %></div>
-          <div class="card-body text-dark">
-           <%= "#{booking.start_date} to #{booking.end_date}" %>
-           <%= link_to "View space", space_path(booking.space), class:"btn btn-primary"  %>
-          </div>
-        </div>
-      </div>
+      <% @spaces.each do |space| %>
+        <%= render 'spaces/space-card', space: space %>
       <% end %>
 
     <% end %>
-  </div>
 </div>
+
+<% unless @spaces.empty? %>
+  <div class="row">
+      <div class="col-12">
+        <h2>Bookings for your hosted spaces</h2>
+      </div>
+
+      <% if @bookings_as_host.empty? %>
+        <div class="col-12">
+          <p>You don't currently have any bookings for your spaces.</p>
+        </div>
+      <% else %>
+
+        <% @bookings_as_host.each do |booking| %>
+          <%= render 'booking-card', booking: booking %>
+        <% end %>
+
+      <% end %>
+  </div>
+<% end %>
