@@ -12,6 +12,7 @@ class SpacesController < ApplicationController
   end
 
   def create
+    @space.user = space.user
     @space = Space.new(space_params)
     if @space.save
       redirect_to @space, notice: 'Space was successfully created.'
