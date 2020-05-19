@@ -28,3 +28,4 @@ class BookingsController < ApplicationController
     @space = Space.find(params[:space_id])
   end
 end
+

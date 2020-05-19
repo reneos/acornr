@@ -15,3 +15,4 @@ class BookingPolicy < ApplicationPolicy
     record.space.user != user
   end
 end
+
