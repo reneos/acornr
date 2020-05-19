@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col">
+    <h1>Welcome!</h1>
+  </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-12">
+      <h2>Spaces You've Booked</h2>
+    </div>
+
+    <% if @bookings.empty? %>
+      <div class="col-12">
+        <p>You haven't booked any spaces yet.</p>
+      </div>
+    <% else %>
+
+      <% @bookings.each do |booking| %>
+        <%= render 'booking-card', booking: booking %>
+      <% end %>
+
+    <% end %>
+</div>
+
+
+<div class="row mb-3">
+    <div class="col-12">
+      <h2>Spaces You're Hosting</h2>
+    </div>
+
+    <% if @spaces.empty? %>
+      <div class="col-12">
+        <div class="alert">You're not currently hosting any spaces.</div>
+      </div>
+    <% else %>
+
+      <% @spaces.each do |space| %>
+        <%= render 'spaces/space-card', space: space %>
+      <% end %>
+
+    <% end %>
+</div>
+
+<% unless @spaces.empty? %>
+  <div class="row mb-3">
+      <div class="col-12">
+        <h2>Bookings for your hosted spaces</h2>
+      </div>
+
+      <% if @bookings_as_host.empty? %>
+        <div class="col-12">
+          <p>You don't currently have any bookings for your spaces.</p>
+        </div>
+      <% else %>
+
+        <% @bookings_as_host.each do |booking| %>
+          <%= render 'booking-card', booking: booking %>
+        <% end %>
+
+      <% end %>
+  </div>
+<% end %>

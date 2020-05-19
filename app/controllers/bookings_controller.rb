@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to space_path(@space)
+      redirect_to dashboard_index_path
     else
       render 'spaces/show'
     end
