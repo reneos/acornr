@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, only: [:index, :show, :create, :new]
   resources :spaces, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: :create
   end
   resources :bookings, only: [:show]
   resource :dashboard, only: [:index]

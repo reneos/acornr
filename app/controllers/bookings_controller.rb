@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
   before_action :set_space, only: [:new, :create]
+
   def new
-    authorize @booking
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -13,7 +14,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to space_path(@space)
     else
-      render :new
+      render 'spaces/show'
     end
   end
 
