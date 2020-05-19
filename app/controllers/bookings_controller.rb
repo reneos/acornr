@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.space = @space
-    @booking.user = currient_user
+    @booking.user = current_user
     if @booking.save
       redirect_to space_path(@space)
     else
