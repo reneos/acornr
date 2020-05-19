@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col">
+    <h1>Welcome!</h1>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+      <h2>Spaces You've Booked</h2>
+    </div>
+
+    <% if @bookings.empty? %>
+      <div class="col-12">
+        <div class="alert alert-info">You haven't booked any spaces yet.</div>
+      </div>
+    <% else %>
+
+      <% @bookings.each do |booking| %>
+      <div class="col-12 col-md-4">
+        <div class="card border-dark mb-3">
+          <div class="card-header">Booking for: <%= booking.space.title %></div>
+          <div class="card-body text-dark">
+           <%= "#{booking.start_date} to #{booking.end_date}" %>
+           <%= link_to "View space", space_path(booking.space), class:"btn btn-primary"  %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+      <h2>Spaces You Are Hosting</h2>
+    </div>
+
+    <% if @spaces.empty? %>
+      <div class="col-12">
+        <div class="alert alert-info">You currently have no spaces.</div>
+      </div>
+    <% else %>
+
+      <% @bookings.each do |booking| %>
+      <div class="col-12 col-md-4">
+        <div class="card border-dark mb-3">
+          <div class="card-header"><%= space.title %></div>
+          <div class="card-body text-dark">
+           <%= "#{booking.start_date} to #{booking.end_date}" %>
+           <%= link_to "View space", space_path(booking.space), class:"btn btn-primary"  %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>
