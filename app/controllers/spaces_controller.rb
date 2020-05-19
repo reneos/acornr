@@ -5,6 +5,7 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @booking = Booking.new # For rendering the booking form
     authorize @space
   end
 
