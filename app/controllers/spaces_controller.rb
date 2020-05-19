@@ -6,6 +6,7 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @booking = Booking.new # For rendering the booking form
+    @booking.space = @space
     authorize @space
   end
 
@@ -19,7 +20,7 @@ class SpacesController < ApplicationController
     @space.user = current_user
     authorize @space
     if @space.save
-      redirect_to space_path(@space), notice: 'Space was successfully created.'
+      redirect_to space_path(@space)
     else
       render :new
     end
