@@ -20,7 +20,7 @@ class SpacesController < ApplicationController
     @space.user = current_user
     authorize @space
     if @space.save
-      redirect_to space_path(@space)
+      redirect_to space_path(@space), flash: {notice: "Space successfully added!" }
     else
       render :new
     end
