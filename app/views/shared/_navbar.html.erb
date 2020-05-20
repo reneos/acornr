@@ -11,18 +11,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <div class="nav-text">
-          <li><%= link_to "New space", new_space_path, class: "nav-text" %></li>
+        <div class="d-flex align-items-center">
+          <div class="nav-text">
+            <li><%= link_to "New space", new_space_path, class: "nav-text" %></li>
+          </div>
+          <div class="nav-text">
+            <li><%= link_to "Bookings", dashboard_index_path, class: "nav-text" %></li>
+          </div>
+          <div class="nav-text">
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-text" %></li>
+          </div>
+          <li class="nav-item dropdown">
+            <%= image_tag "useravatar.png", class: "avatar"%>
+          </li>
         </div>
-        <div class="nav-text">
-          <li><%= link_to "Bookings", dashboard_index_path, class: "nav-text" %></li>
-        </div>
-        <div class="nav-text">
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-text" %></li>
-        </div>
-        <li class="nav-item dropdown">
-          <%= image_tag "useravatar.png", class: "avatar"%>
-        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login/Sign up", new_user_session_path, class: "nav-link" %>

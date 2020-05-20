@@ -1,26 +1,36 @@
 // Specific CSS for your home-page
-.jumbotron{
+.banner {
   background-size: cover;
-  background-repeat: no-repeat;
-  margin-top: 0px;
-  color: #16302B;
-  height: 300px;
+  background-position: center;
+  padding: 150px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('banner.jpg');
+  margin-bottom: 12px;
 }
-
-p {
-  color: #16302B;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 48px;
 }
-
+.banner h4 {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
 #search-bar {
   width: 300px;
   background-color: $light-gray;
   opacity: .9;
 }
-
-.jumbotron .btn-success {
+.banner .btn-success {
     color: white;
-    background-color: #16302b;
-    border-color: #16302b;
+    background-color: $dark-green;
+    border-color: $dark-green;
+}
+
+.container h3 {
+  color: $dark-green;
 }
 
 footer {

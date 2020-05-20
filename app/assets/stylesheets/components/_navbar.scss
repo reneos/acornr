@@ -12,20 +12,30 @@
   height: 100%;
 }
 .navbar {
-  background-color: #16302B;
+  background-color: $dark-green;
   height: 64px;
 }
 .navbar-light .navbar-nav .nav-link {
-  color: #B0FFA5;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  color: $green;
+  margin: 10px;
+  cursor: -webkit-pointer; cursor: pointer;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 .nav-text {
-  color: #B0FFA5;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  color: $green;
   margin: 10px;
-  cursor: -webkit-grabbing; cursor: grabbing;
-}
-.nav-text :hover{
-  color: white;
-  text-decoration: none;
+  cursor: -webkit-pointer; cursor: pointer;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 .navbar-brand {
   height: 32px;
