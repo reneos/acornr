@@ -1,6 +1,6 @@
 <% if policy(@booking).create? %>
   <div class="card mb-3">
-    <img class="card-img-top" src="https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?cs=srgb&dl=round-brown-wooden-table-with-chairs-inside-room-1668860.jpg&fm=jpg" alt="Card image cap">
+     <%= cl_image_tag @space.photo.key, alt: "alttext", crop: :fill, class: 'card-img-top' %>
     <div class="card-body">
       <h5 class="card-title"><%= @space.title %></h5>
       <p class="card-text"><%= @space.description %></p>
@@ -9,16 +9,18 @@
             <%= f.input :start_date, as: :string, type: :text %>
             <%= f.input :end_date, as: :string, type: :text%>
             <%= f.input :message, as: :text %>
-            <%= f.submit "Request booking", class: "button-home" %>
             <% end %>
       </div>
       <div class="text-right">
         <%= link_to "Back home", root_path %>
+            <%= f.submit "Request booking", class: "btn btn-success" %>
+          <% end %>
+
       </div>
   </div>
 <% else %>
   <div class="card mb-3">
-    <img class="card-img-top" src="https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg?cs=srgb&dl=round-brown-wooden-table-with-chairs-inside-room-1668860.jpg&fm=jpg" alt="Card image cap">
+    <%= cl_image_tag @space.photo.key, alt: "alttext", crop: :fill, class: 'card-img-top space-card-img' %>
     <div class="card-body">
       <h5 class="card-title"><%= @space.title %></h5>
       <p class="card-text"><%= @space.description %></p>

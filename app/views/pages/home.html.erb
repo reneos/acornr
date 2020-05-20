@@ -1,7 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/11/22/19/24/archive-1850170_960_720.jpg);">
+</div>
+<div class="jumbotron jumbotron-fluid" style="background-image: linear-gradient(to bottom, rgba(180,180,180,0.6) 0%,rgba(240,240,240,0.9) 100%), url(https://cdn.pixabay.com/photo/2016/11/22/19/24/archive-1850170_960_720.jpg
+)">
   <div class="container">
-
-    <a class="btn btn-flat" href="#"></a>
+    <h1 class="display-4">Welcome to Acornr</h1>
+    <p class="lead">Find a corner in any city to safely store your things.</p>
   </div>
 </div>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla autem provident, odio et, magni minima excepturi fuga esse, nesciunt eum est commodi unde consequatur aspernatur aliquam numquam ad rerum natus.</p>
+<div class="container">
+<p>Recently created spaces.</p>
+<div class="row">
+  <% @spaces.each do |space| %>
+    <%= render 'spaces/space-card', space: space %>
+  <% end %>
+</div>
+
