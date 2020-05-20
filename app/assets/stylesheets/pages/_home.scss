@@ -10,3 +10,15 @@
 p {
   color: #16302B;
 }
+
+#search-bar {
+  width: 300px;
+  background-color: $light-gray;
+  opacity: .9;
+}
+
+.jumbotron .btn-success {
+    color: white;
+    background-color: #16302b;
+    border-color: #16302b;
+}
