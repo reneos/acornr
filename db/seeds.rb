@@ -24,31 +24,31 @@ puts 'Created 5 users'
 
 puts 'About to create 10 spaces'
 
+garage = "https://images.unsplash.com/photo-1532884988337-3c5dca28cccc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+closet ="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+white_closet = "https://images.unsplash.com/photo-1580792025119-484e27370138?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+house_garage = "https://images.unsplash.com/flagged/photo-1566838616793-29a4102a5b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+parking_lot = "https://images.unsplash.com/photo-1508465487720-54cef28cc719?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80"
+small_shed = "https://images.unsplash.com/photo-1507035159636-7a86eb324885?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1613&q=80"
+
 users = User.all
-images = ["https://images.unsplash.com/photo-1532884988337-3c5dca28cccc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-          "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-          "https://images.unsplash.com/photo-1580792025119-484e27370138?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-          "https://images.unsplash.com/flagged/photo-1566838616793-29a4102a5b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-          "https://images.unsplash.com/photo-1508465487720-54cef28cc719?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80"
-          ]
 
 adjectives = %w(Spacious Wide Small Big Medium Tiny Convenient Cool Superb Great Nice)
 
-10.times do
-  space = Space.new(
-    title: "#{adjectives.sample} #{Faker::House.room}",
-    address: Faker::Address.full_address,
-    user: users.sample,
-    description: Faker::Lorem.sentences(number: 8).join(' '),
-    price: (rand(1000..100000))
-  )
-  file = URI.open(images.sample)
-  space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
-  space.save!
-end
+space = Space.new(
+  title: "",
+  address: Faker::Address.full_address,
+  user: users.sample,
+  description: ,
+  price: (rand(1..10) * 5)
+)
+file = URI.open(images.sample)
+space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
+space.save!
 
 
-puts 'Created 10 spaces.'
+
+puts 'Created 5 spaces.'
 
 
 puts "About to create 15 bookings"
