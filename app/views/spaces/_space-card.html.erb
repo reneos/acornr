@@ -3,7 +3,6 @@
     <%= cl_image_tag space.photo.key, alt: "alttext", crop: :fill, height: 700, class: 'card-img-top space-card-img' %>
     <div class="card-body">
       <h5 class="card-title"><%= space.title %></h5>
-      <p class="address"><%= space.address %></p>
       <p class="card-text"><%= truncate(space.description, length: 40) %></p>
         <%= link_to "", space_path(space), class: "view-space-link" %>
       </div>
