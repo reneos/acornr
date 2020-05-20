@@ -1,17 +1,17 @@
-<div class="row">
+<div class="row mt-5 mb-5">
   <div class="col">
     <h1>Welcome!</h1>
   </div>
 </div>
 
-<div class="row mb-3">
+<div class="row mb-5">
     <div class="col-12">
       <h2>Spaces You've Booked</h2>
     </div>
 
     <% if @bookings.empty? %>
       <div class="col-12">
-        <p>You haven't booked any spaces yet.</p>
+        <p>You haven't booked any spaces yet. <%= link_to "View all spaces.", spaces_path %></p>
       </div>
     <% else %>
 
@@ -23,14 +23,14 @@
 </div>
 
 
-<div class="row mb-3">
+<div class="row mb-5">
     <div class="col-12">
       <h2>Spaces You're Hosting</h2>
     </div>
 
     <% if @spaces.empty? %>
       <div class="col-12">
-        <div class="alert">You're not currently hosting any spaces.</div>
+        <p>You're not currently hosting any spaces. <%= link_to "Create a space?", new_space_path %></p>
       </div>
     <% else %>
 
@@ -42,7 +42,7 @@
 </div>
 
 <% unless @spaces.empty? %>
-  <div class="row mb-3">
+  <div class="row mb-5">
       <div class="col-12">
         <h2>Bookings for your hosted spaces</h2>
       </div>
