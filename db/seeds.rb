@@ -22,33 +22,84 @@ end
 puts 'Created 5 users'
 
 
-puts 'About to create 10 spaces'
+puts 'About to create 5 spaces'
+
+garage = "https://images.unsplash.com/photo-1532884988337-3c5dca28cccc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+closet ="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+white_closet = "https://images.unsplash.com/photo-1580792025119-484e27370138?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+house_garage = "https://images.unsplash.com/flagged/photo-1566838616793-29a4102a5b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+parking_lot = "https://images.unsplash.com/photo-1508465487720-54cef28cc719?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80"
+small_shed = "https://images.unsplash.com/photo-1507035159636-7a86eb324885?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1613&q=80"
 
 users = User.all
-images = ["https://images.unsplash.com/photo-1532884988337-3c5dca28cccc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-          "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-          "https://images.unsplash.com/photo-1580792025119-484e27370138?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-          "https://images.unsplash.com/flagged/photo-1566838616793-29a4102a5b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-          "https://images.unsplash.com/photo-1508465487720-54cef28cc719?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80"
-          ]
 
-adjectives = %w(Spacious Wide Small Big Medium Tiny Convenient Cool Superb Great Nice)
+space = Space.new(
+  title: "Shelving in Stock Room",
+  address: Faker::Address.full_address,
+  user: users.sample,
+  description: "I have a spacious storage room at the back of my shop that has some empty shelves available for short-term storage. I'm willing to store sealed cardboard boxes, but nothing perishable, please.",
+  price: (rand(1..10) * 5)
+)
+file = URI.open(garage)
+space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
+space.save!
 
-10.times do
-  space = Space.new(
-    title: "#{adjectives.sample} #{Faker::House.room}",
-    address: Faker::Address.full_address,
-    user: users.sample,
-    description: Faker::Lorem.sentences(number: 8).join(' '),
-    price: (rand(1000..100000))
-  )
-  file = URI.open(images.sample)
-  space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
-  space.save!
-end
+space = Space.new(
+  title: "Convenient Clothing Storage",
+  address: Faker::Address.full_address,
+  user: users.sample,
+  description: "A generously sized walk-in closet area available for storing a variety of garments safely and securely (infrequently worn formalwear, bulky winter jackets, etc.) The closet is in my home and I'm available throughout the year.",
+  price: (rand(1..10) * 5)
+)
+file = URI.open(closet)
+space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
+space.save!
 
+space = Space.new(
+  title: "Immaculate Closet",
+  address: Faker::Address.full_address,
+  user: users.sample,
+  description: "I have a guest bedroom with a completely empty closet, waiting to store your belongings. Boxes, (clean) bicycles, clothes, shoes other such items are acceptable. The area is very secure and my home is very well maintained, so your items will be safe with me.",
+  price: (rand(1..10) * 5)
+)
+file = URI.open(white_closet)
+space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
+space.save!
 
-puts 'Created 10 spaces.'
+space = Space.new(
+  title: "Summer Storage Garage",
+  address: Faker::Address.full_address,
+  user: users.sample,
+  description: "I have a large garage that I'm willing to lease out for storage for the summer months (now until September). You can fit a medium-sized car or other boxes, etc. Let me know.",
+  price: (rand(1..10) * 5)
+)
+file = URI.open(house_garage)
+space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
+space.save!
+
+space = Space.new(
+  title: "Parking space",
+  address: Faker::Address.full_address,
+  user: users.sample,
+  description: "I'm not going to be using my parking space between now and August 31st. It's close to city center and the entrance ot the parking lot is monitored via camera 24/7 so it's very secure.",
+  price: (rand(1..10) * 5)
+)
+file = URI.open(parking_lot)
+space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
+space.save!
+
+space = Space.new(
+  title: "Shed",
+  address: Faker::Address.full_address,
+  user: users.sample,
+  description: "A shed in my backyard has been sitting empty for some months, so I'm leasing it for storage. Mostly anything is acceptable, as long as it will fit through the door (measures 5ft by 8ft). Long term storage is OK.",
+  price: (rand(1..10) * 5)
+)
+file = URI.open(small_shed)
+space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
+space.save!
+
+puts 'Created 5 spaces.'
 
 
 puts "About to create 15 bookings"
