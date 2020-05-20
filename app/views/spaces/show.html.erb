@@ -26,9 +26,10 @@
       <div class="bookings-form" data-unavailable="<%= @space.unavailable_dates.to_json %>">
         <% disabled = !policy(@booking).create? %>
         <%= simple_form_for [@space, @booking] do |f| %>
-          <%= f.input :start_date, label: "Dates", value: "", as: :string, disabled: disabled %>
-          <%= f.input :message, disabled: disabled %>
-          <%= f.submit "Request booking", class: "btn btn-success w-100", disabled: disabled %>
+              <%= f.input :start_date, as: :string, disabled: disabled %>
+              <%= f.input :end_date, as: :string, disabled: disabled %>
+              <%= f.input :message, disabled: disabled %>
+              <%= f.submit "Request booking", class: "btn btn-success", disabled: disabled %>
         <% end %>
       </div>
     </div>

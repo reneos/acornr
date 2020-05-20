@@ -29,11 +29,9 @@ import flatpickr from "flatpickr";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { init_flatpickr } from '../plugins/init_flatpickr';
-import { init_price_calculator } from '../plugins/init_price_calculator'
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   init_flatpickr();
-  init_price_calculator();
 });
