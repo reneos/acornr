@@ -8,11 +8,11 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  height: 100%
+  height: 100%;
 }
 .navbar {
   background-color: #16302B;
-  height: 80px;
+  height: 64px;
 }
 .navbar-light .navbar-nav .nav-link {
   color: #B0FFA5;
@@ -23,8 +23,9 @@
 }
 .nav-text :hover{
   color: white;
+  text-decoration: none;
 }
 .navbar-brand {
-  height: 100%;
-  padding: 0;
+  height: 32px;
+  padding: 0 8px;
 }
