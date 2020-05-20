@@ -3,7 +3,7 @@
 <div class="jumbotron space-show-header" style="background-image: linear-gradient(to top, rgba(180, 180, 180, 0.1) 0%,rgb(189, 195, 190) 100%), url(<%= cl_image_path @space.photo.key, crop: :fill %>)">
   <div class="container">
     <h1 class="display-4"><%= @space.title %></h1>
-    <p class="lead"><%= @space.address %></p>
+    <h3><%= @space.address %></h3>
   </div>
 </div>
 

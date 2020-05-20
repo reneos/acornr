@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_05_20_020641) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price"
-    t.text "message"
     t.index ["user_id"], name: "index_spaces_on_user_id"
   end
 
