@@ -64,11 +64,13 @@ def create_booking
   end_date = start_date + rand(1..30)
   space = Space.all.sample
   user = find_valid_user(space.user)
+  message = "I'd like to store #{rand(2..4)} #{Faker::House.furniture}s."
   booking = Booking.new(
     start_date: start_date,
     end_date: end_date,
     space: space,
-    user: user
+    user: user,
+    message: message
   )
 
   # in case it's invalid due to date overlap
