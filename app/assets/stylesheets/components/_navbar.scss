@@ -5,10 +5,11 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  cursor: pointer;
 }
 
 .navbar-lewagon .navbar-brand img {
-  height: 100%
+  height: 100%;
 }
 .navbar {
   background-color: #16302B;
@@ -20,6 +21,7 @@
 .nav-text {
   color: #B0FFA5;
   margin: 10px;
+  cursor: -webkit-grabbing; cursor: grabbing;
 }
 .nav-text :hover{
   color: white;
