@@ -19,17 +19,18 @@
     </div>
 
   </div>
-  <div class="col-12 col-md-4 col-lg-4">
+  <div class="col-12 col-md-4 col-lg-4 space-show-right-column">
     <div class="container pt-4">
+      <div class="space-show-pricing"><span class="pricing">$<%= @space.price %></span> per day</div>
       <h2>Request Booking</h2>
-    <div class="bookings-form" data-unavailable="<%= @space.unavailable_dates.to_json %>">
-      <% disabled = !policy(@booking).create? %>
-      <%= simple_form_for [@space, @booking] do |f| %>
-            <%= f.input :start_date, as: :string, type: :text, disabled: disabled %>
-            <%= f.input :end_date, as: :string, type: :text, disabled: disabled %>
-            <%= f.input :message, as: :text, disabled: disabled %>
-            <%= f.submit "Request booking", class: "btn btn-success", disabled: disabled %>
-            <% end %>
+      <div class="bookings-form" data-unavailable="<%= @space.unavailable_dates.to_json %>">
+        <% disabled = !policy(@booking).create? %>
+        <%= simple_form_for [@space, @booking] do |f| %>
+              <%= f.input :start_date, as: :string, disabled: disabled %>
+              <%= f.input :end_date, as: :string, disabled: disabled %>
+              <%= f.input :message, disabled: disabled %>
+              <%= f.submit "Request booking", class: "btn btn-success", disabled: disabled %>
+        <% end %>
       </div>
     </div>
 

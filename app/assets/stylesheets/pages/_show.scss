@@ -15,6 +15,33 @@
   background-color: $light-gray;
 }
 
+.space-show-right-column {
+  position: relative;
+}
+
+.space-show-pricing {
+  position: absolute;
+  box-shadow: 4px 4px 10px #888888;
+  text-align: center;
+  background-color: #16302b;
+  color: white;
+  top: -60px;
+  right: -60px;
+  border: 2px solid white;
+  padding: 8px;
+  font-size: .9em;
+  width: 120px;
+  border-radius: 50%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .pricing {
+    font-size: 2em;
+    display: block;
+  }
+}
 
 @include media-breakpoint-up(md) {
   .space-show-information {
@@ -30,4 +57,32 @@
 .flatpickr-day.selected {
     background-color: #16302B;
     border-color: #16302B;
+}
+
+@include media-breakpoint-down(md) {
+  .space-show-pricing {
+    font-size: .8em;
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -50px;
+  }
+  .pricing {
+    font-size: 1.7em;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .space-show-pricing {
+    position: static;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 3em;
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    color: $dark-green;
+    background-color: transparent;
+    border: 1px solid $dark-green;
+  }
 }
