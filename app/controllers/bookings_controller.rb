@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to dashboard_index_path
+      redirect_to dashboard_index_path, flash: {notice: "Booking requested. Please wait for the host to respond." }
     else
       render 'spaces/show'
     end
