@@ -1,27 +1,41 @@
-<% if policy(@booking).create? %>
-  <div class="card mb-3">
-     <%= cl_image_tag @space.photo.key, alt: "alttext", crop: :fill, class: 'card-img-top' %>
-    <div class="card-body">
-      <h5 class="card-title"><%= @space.title %></h5>
-      <p class="card-text"><%= @space.description %></p>
-      <div class="bookings-form col-6" data-unavailable="<%= @space.unavailable_dates.to_json %>">
+</div><!-- close container -->
+
+<div class="jumbotron space-show-header" style="background-image: linear-gradient(to top, rgba(180, 180, 180, 0.1) 0%,rgb(189, 195, 190) 100%), url(<%= cl_image_path @space.photo.key, crop: :fill %>)">
+  <div class="container">
+    <h1 class="display-4"><%= @space.title %></h1>
+    <p class="lead"><%= @space.address %></p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="row space-show-information">
+  <div class="col-12 col-md-8 col-lg-8 mb-5">
+    <div class="container pt-4">
+          <h2>Description</h2>
+    <p><%= @space.description %></p>
+    <h2 class="mt-5">Photos from the host</h2>
+    <%= cl_image_tag @space.photo.key, alt: @space.title, crop: :fill, class: "space-show-img" %>
+    </div>
+
+  </div>
+  <div class="col-12 col-md-4 col-lg-4">
+    <div class="container pt-4">
+      <h2>Request Booking</h2>
+    <div class="bookings-form" data-unavailable="<%= @space.unavailable_dates.to_json %>">
+      <% disabled = !policy(@booking).create? %>
       <%= simple_form_for [@space, @booking] do |f| %>
-            <%= f.input :start_date, as: :string, type: :text %>
-            <%= f.input :end_date, as: :string, type: :text%>
-            <%= f.input :message, as: :text %>
-            <%= f.submit "Request booking", class: "btn btn-success" %>
+            <%= f.input :start_date, as: :string, type: :text, disabled: disabled %>
+            <%= f.input :end_date, as: :string, type: :text, disabled: disabled %>
+            <%= f.input :message, as: :text, disabled: disabled %>
+            <%= f.submit "Request booking", class: "btn btn-success", disabled: disabled %>
             <% end %>
       </div>
-      <div class="text-right">
-        <%= link_to "Back home", root_path %>
+    </div>
 
-      </div>
   </div>
-<% else %>
-  <div class="card mb-3">
-    <%= cl_image_tag @space.photo.key, alt: "alttext", crop: :fill, class: 'card-img-top space-card-img' %>
-    <div class="card-body">
-      <h5 class="card-title"><%= @space.title %></h5>
-      <p class="card-text"><%= @space.description %></p>
-  </div>
-<% end %>
+
+</div>
+
+
+

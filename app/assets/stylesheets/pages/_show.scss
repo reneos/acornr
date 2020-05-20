@@ -1,0 +1,33 @@
+.space-show-header {
+  height: 40vh;
+  background-position: center;
+}
+
+.space-show-img {
+  width: 100%;
+}
+
+.bookings-form .form-control[readonly] {
+  background-color: white;
+}
+
+.space-show-information {
+  background-color: $light-gray;
+}
+
+
+@include media-breakpoint-up(md) {
+  .space-show-information {
+    margin-top: -20vh;
+  }
+}
+
+.flatpickr-day.today {
+    background-color: $green;
+    border-color: $green;
+}
+
+.flatpickr-day.selected {
+    background-color: #16302B;
+    border-color: #16302B;
+}
