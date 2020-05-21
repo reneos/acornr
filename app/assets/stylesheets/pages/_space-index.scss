@@ -1,8 +1,6 @@
 #map {
-  height: 100%;
-  width: 100%;
   position: sticky;
-  top: 80px;
+  top: 0;
 }
 
 .space-wrapper>.col-6 {
@@ -13,10 +11,12 @@
     color: $dark-green;
     background-color: transparent;
     border-color: $dark-green;
+    border: none;
+    font-size: .9em;
+    padding: .3em .6em;
     &:hover {
       background-color: $success;
       border-color: $success;
-      padding: .3em .6em;
     }
 }
 
@@ -46,17 +46,23 @@
   h2 {
     font-size: 1em;
   }
+  p {
+    margin-bottom: .5em;
+  }
+   li {
+    height: 140px;
+  }
 }
-
 
 
 .list-img-container {
   width: 30%;
+  height: 100%;
 }
 
 .list-img {
   width: 100%;
-  height: 100px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
