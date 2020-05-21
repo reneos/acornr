@@ -29,13 +29,15 @@
   object-position: center;
 }
 
-.card-price {
-  border: solid white 0.1px;
-  background-color: $dark-green;
-  width: 100px;
-  height: 32px;
-  text-align: center;
-  color: white;
-  float: right;
-   box-shadow: 5px 5px 5px #e4e4e4;
+ .card-price {
+//   border: solid white 0.1px;
+     background-color: $dark-green;
+//   width: 100px;
+//   height: 32px;
+//   text-align: center;
+     color: white;
+//   float: right;
+    box-shadow: 5px 5px 5px #e4e4e4;
+    border-radius: 20px;
+    font-size: 20px;
 }
