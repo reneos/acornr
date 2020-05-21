@@ -12,3 +12,10 @@ position: absolute;
 border: solid 0.1px white;
 padding: 8px;
 }
+
+.btn-success {
+  border: solid 1px #DEDDE2;
+  &:hover {
+    cursor: pointer;
+  }
+}
