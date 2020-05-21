@@ -1,0 +1,14 @@
+<div class="row mb-5">
+    <div class="col-12">
+      <h2>Spaces You're Hosting</h2>
+    </div>
+    <% if @spaces.empty? %>
+      <div class="col-12">
+        <p>You're not currently hosting any spaces. <%= link_to "Create a space?", new_space_path %></p>
+      </div>
+    <% else %>
+      <% @spaces.each do |space| %>
+        <%= render 'spaces/space-card', space: space %>
+      <% end %>
+    <% end %>
+</div>
