@@ -14,5 +14,9 @@ class BookingPolicy < ApplicationPolicy
     # Can only create if the space does not belong to current user
     record.space.user != user
   end
+
+  def update?
+    record.space.user == user
+  end
 end
 

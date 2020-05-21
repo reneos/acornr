@@ -18,6 +18,20 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+
+    if params[:booking][:approved]
+      @booking.approved = true
+    elsif params[:booking][:rejected]
+      @booking.rejected = true
+    end
+    authorize @booking
+    @booking.save
+    message = "You have #{@booking.approved ? "accepted" : "declined" } the booking for #{@booking.space.title.downcase}"
+    redirect_to dashboard_index_path, flash: { notice: message }
+  end
+
   private
 
   def booking_params
