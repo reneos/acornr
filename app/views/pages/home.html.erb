@@ -3,12 +3,11 @@
   <div class="container">
     <h1>Welcome to Acornr</h1>
     <h4>Find a friendly corner to safely store your things.</h4>
-    <form class="form-inline">
-      <div class="form-group">
-        <input type="text" placeholder="Search for a space near you..." id="search-bar" class="form-control" aria-describedby="passwordHelpInline">
-        <input type="button" value="search" class="btn btn-success">
-      </div>
-    </form>
+    <%= simple_form_for :search, url: spaces_path, method: :get, html: {class: 'form-inline'} do |f| %>
+        <%= f.input :place, input_html: {value: "", id:'search-bar'} %>
+        <%= f.submit %>
+    <% end %>
+
   </div>
 </div>
 
