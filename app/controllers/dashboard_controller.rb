@@ -5,3 +5,5 @@ class DashboardController < ApplicationController
     @bookings_as_host = policy_scope(current_user.bookings_as_host)
   end
 end
+
+# booking_as_host all the bookings other people have made on your spaces

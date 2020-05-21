@@ -1,0 +1,15 @@
+<div class="row mb-5">
+    <div class="col-12">
+      <h2>Your Hostings</h2>
+    </div>
+    <% if @bookings_as_host.empty? %>
+      <div class="col-12">
+        <p>You're not currently hosting any spaces. <%= link_to "Create a space?", new_space_path %></p>
+      </div>
+    <% else %>
+      <% @bookings_as_host.each do |booking| %>
+        <%= render 'booking-card', booking: booking %>
+      <% end %>
+    <% end %>
+</div>
+

@@ -4,6 +4,7 @@
     <div class="card-body">
       <h5 class="card-title"><%= space.title %></h5>
       <p class="card-text"><%= truncate(space.description, length: 40) %></p>
+      <p class="card-price btn col align-self-end"><i class="fas fa-dollar-sign"></i><%= space.price %> per day</p>
         <%= link_to "", space_path(space), class: "view-space-link" %>
       </div>
     </div>
