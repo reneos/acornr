@@ -1,6 +1,13 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = policy_scope(Space).order(created_at: :desc)
+    @spaces = policy_scope(Space).geocoded
+    @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+      }
+    end
   end
 
   def show
