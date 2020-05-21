@@ -21,7 +21,7 @@ class Booking < ApplicationRecord
 
    def availability
     # exclude end date in range because you can start on the same day another booking ends
-    other_bookings_ranges = space.bookings.map { |b| (b.start_date...b.end_date) }
+    other_bookings_ranges = space.bookings.reject { |b| b == self }.map { |b| (b.start_date...b.end_date) }
     if other_bookings_ranges.any? { |range| range.overlaps?(start_date...end_date) }
       errors.add(:start_date, "dates overlap with another booking")
     end
