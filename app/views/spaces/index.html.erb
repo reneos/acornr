@@ -1,15 +1,28 @@
 </div>
-<div class="container">
-<div class="row">
+<div class="d-flex h-100 flex-grow space-wrapper">
 
 <div class="col-6">
-  <ul class="list-group">
-  <% @spaces.each do |space| %>
-    <li class="list-group-item">
-      <%= space.title %>
-    </li>
-  <% end %>
-</ul>
+  <ul class="list-group w-100">
+    <% @spaces.each do |space| %>
+      <li class="list-group-item d-flex justify-content-between">
+        <div class="ml-2 d-flex flex-column justify-content-between">
+          <div class="content">
+            <h2><%= space.title %></h2>
+            <p><%= space.address %></p>
+          </div>
+          <div class="buttons">
+            <%= link_to "View space", space_path(space), class: "btn btn-success" %>
+            <a href="#" class="btn btn-success map-button" data-coords="<%= "#{space.longitude},#{space.latitude}" %>">
+              <i class="fas fa-map"></i> View on map
+            </a>
+          </div>
+        </div>
+        <div class="list-img-container">
+          <%= cl_image_tag space.photo.key, height: 400, fill: :fit, alt: space.title, class: "list-img" %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
 
@@ -24,5 +37,7 @@
 
 
 </div>
+<div class="container">
+
 
 
