@@ -9,6 +9,17 @@
   padding: 0;
 }
 
+.space-wrapper .btn-success {
+    color: $dark-green;
+    background-color: transparent;
+    border-color: $dark-green;
+    &:hover {
+      background-color: $success;
+      border-color: $success;
+      padding: .3em .6em;
+    }
+}
+
 .mapboxgl-popup {
   max-width: 200px;
 

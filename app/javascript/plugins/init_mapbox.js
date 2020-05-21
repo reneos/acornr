@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const mapElement = document.getElementById('map');
 
@@ -33,9 +34,12 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-    const list = document.querySelectorAll('.map-button')
+    map.addControl(new MapboxGeocoder({ accessToken: mapElement.dataset.mapboxApiKey,
+                                  mapboxgl: mapboxgl }));
+    const list = document.querySelectorAll('.map-button');
     list.forEach((space) => {
       space.addEventListener('click',(e) => {
+        e.preventDefault();
         const coords = e.currentTarget.dataset.coords.split(',').map((i) => parseFloat(i));
         map.flyTo({ center: coords, zoom: 15, speed: 2 });
       })
