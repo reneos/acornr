@@ -1,15 +1,19 @@
 <div class="container">
   <div class="row">
-  <div class="col-md-5 offset-md-3">
+  <div class="col-md-5 offset-md-3 mt-5 mb-4">
     <h1>Create Space</h1>
   <%= simple_form_for(space) do |f| %>
   <div>
+    <div class="simple-form">
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :price %>
+    <div class="mb-3 mt-3">
     <%= f.submit "Create space", class:"btn btn-success"%>
-    <%= f.input :photo, as: :file %>
+     </div>
+      <%= f.input :photo, as: :file %>
+  </div>
   </div>
 <% end %>
   </div>
