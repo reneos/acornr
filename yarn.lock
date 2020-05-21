@@ -2953,11 +2953,6 @@ findup-sync@3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
-flatpickr@^4.6.3:
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.3.tgz#15a8b76b6e34e3a072861250503a5995b9d3bc60"
-  integrity sha512-007VucCkqNOMMb9ggRLNuJowwaJcyOh4sKAFcdGfahfGc7JQbf94zSzjdBq/wVyHWUEs5o3+idhFZ0wbZMRmVQ==
-
 flatted@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
@@ -4064,6 +4059,11 @@ lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
+
+litepicker@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/litepicker/-/litepicker-1.4.6.tgz#0c23bbafa1e5ddaf693c33899b9e776d759a98dc"
+  integrity sha512-TcerxQk+O1HyHdMSA+CKyC6TeOhEkp4LxEMi6uqDkKpInipx/fpANMyioxEYPZvd/xa6qXGPSyyHijKTWZEv1A==
 
 load-json-file@^1.0.0:
   version "1.1.0"

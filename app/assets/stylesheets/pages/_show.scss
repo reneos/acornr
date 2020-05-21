@@ -1,6 +1,8 @@
 .space-show-header {
   height: 56vh;
   background-position: center;
+  color: white;
+  text-shadow: 1px 1px 0px #16302b96;
 }
 
 .space-show-img {
@@ -15,6 +17,41 @@
   background-color: $light-gray;
 }
 
+.space-show-right-column {
+  position: relative;
+}
+
+.space-show-pricing {
+  position: absolute;
+  box-shadow: 4px 4px 10px #888888;
+  text-align: center;
+  background-color: #16302b;
+  color: white;
+  top: -60px;
+  right: -60px;
+  border: 2px solid white;
+  padding: 8px;
+  font-size: .9em;
+  width: 120px;
+  border-radius: 50%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .pricing {
+    font-size: 2em;
+    display: block;
+  }
+}
+
+#total_price {
+  padding: 8px 16px;
+  background-color: darken($light-gray, 3%);
+  border: 1px solid darken($light-gray, 5%);
+  margin: 8px 0;
+  display: none;
+}
 
 @include media-breakpoint-up(md) {
   .space-show-information {
@@ -22,12 +59,35 @@
   }
 }
 
-.flatpickr-day.today {
-    background-color: $green;
-    border-color: $green;
+
+@include media-breakpoint-down(md) {
+  .space-show-pricing {
+    font-size: .8em;
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -50px;
+  }
+  .pricing {
+    font-size: 1.7em;
+  }
 }
 
-.flatpickr-day.selected {
-    background-color: #16302B;
-    border-color: #16302B;
+@include media-breakpoint-down(sm) {
+  .space-show-pricing {
+    position: static;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 3em;
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    color: $dark-green;
+    background-color: transparent;
+    border: 1px solid $dark-green;
+  }
 }
+
+
+
+

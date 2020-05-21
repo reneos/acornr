@@ -6,6 +6,6 @@ class Space < ApplicationRecord
   validates :title, :photo, :address, :description, :price, presence: true
 
   def unavailable_dates
-    bookings.pluck(:start_date, :end_date).map { |d| { from: d[0], to: d[1]-1 } }
+    bookings.pluck(:start_date, :end_date).map { |d| [ d[0], d[1] - 1 ] }
   end
 end

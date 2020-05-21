@@ -38,7 +38,7 @@ space = Space.new(
   address: Faker::Address.full_address,
   user: users.sample,
   description: "I have a spacious storage room at the back of my shop that has some empty shelves available for short-term storage. I'm willing to store sealed cardboard boxes, but nothing perishable, please.",
-  price: (rand(1..10) * 5)
+  price: rand(3..10)
 )
 file = URI.open(garage)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
@@ -49,7 +49,7 @@ space = Space.new(
   address: Faker::Address.full_address,
   user: users.sample,
   description: "A generously sized walk-in closet area available for storing a variety of garments safely and securely (infrequently worn formalwear, bulky winter jackets, etc.) The closet is in my home and I'm available throughout the year.",
-  price: (rand(1..10) * 5)
+  price: rand(3..10)
 )
 file = URI.open(closet)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
@@ -60,7 +60,7 @@ space = Space.new(
   address: Faker::Address.full_address,
   user: users.sample,
   description: "I have a guest bedroom with a completely empty closet, waiting to store your belongings. Boxes, (clean) bicycles, clothes, shoes other such items are acceptable. The area is very secure and my home is very well maintained, so your items will be safe with me.",
-  price: (rand(1..10) * 5)
+  price: rand(3..10)
 )
 file = URI.open(white_closet)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
@@ -71,7 +71,7 @@ space = Space.new(
   address: Faker::Address.full_address,
   user: users.sample,
   description: "I have a large garage that I'm willing to lease out for storage for the summer months (now until September). You can fit a medium-sized car or other boxes, etc. Let me know.",
-  price: (rand(1..10) * 5)
+  price: rand(3..10)
 )
 file = URI.open(house_garage)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
@@ -82,7 +82,7 @@ space = Space.new(
   address: Faker::Address.full_address,
   user: users.sample,
   description: "I'm not going to be using my parking space between now and August 31st. It's close to city center and the entrance ot the parking lot is monitored via camera 24/7 so it's very secure.",
-  price: (rand(1..10) * 5)
+  price: rand(3..10)
 )
 file = URI.open(parking_lot)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
@@ -93,7 +93,7 @@ space = Space.new(
   address: Faker::Address.full_address,
   user: users.sample,
   description: "A shed in my backyard has been sitting empty for some months, so I'm leasing it for storage. Mostly anything is acceptable, as long as it will fit through the door (measures 5ft by 8ft). Long term storage is OK.",
-  price: (rand(1..10) * 5)
+  price: rand(3..10)
 )
 file = URI.open(small_shed)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')

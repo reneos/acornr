@@ -6,9 +6,14 @@ class Booking < ApplicationRecord
   validate :dates_valid
   validate :availability
 
-
+  after_validation :update_price
+  def update_price
+    self.price = (end_date - start_date).to_i * space.price
+  end
 
   private
+
+
   def dates_valid
     return unless start_date && end_date
     errors.add(:end_date, "start date must be before end date") if end_date <= start_date
