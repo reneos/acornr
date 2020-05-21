@@ -4,8 +4,9 @@
     <h1>Welcome to Acornr</h1>
     <h4>Find a friendly corner to safely store your things.</h4>
     <%= simple_form_for :search, url: spaces_path, method: :get, html: {class: 'form-inline'} do |f| %>
-        <%= f.input :place, input_html: {value: "", id:'search-bar'} %>
-        <%= f.submit %>
+        <%= f.input :place, label: false, input_html: {value: "", id:'search-bar'} %>
+        <%= f.hidden_field :coords, id: "search-coords" %>
+        <%= f.submit "Search", class: "btn btn-success", id: "search-button" %>
     <% end %>
 
   </div>
