@@ -7,11 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new
-    @booking.message = (params[:booking][:message])
-    dates = params[:booking][:start_date].gsub(' to ',' ').split(' ').map { |date| Date.parse(date) }
-    @booking.start_date = dates[0]
-    @booking.end_date = dates[1]
+    @booking = Booking.new(booking_params)
     @booking.space = @space
     @booking.user = current_user
     authorize @booking
@@ -25,7 +21,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :message)
+    params.require(:booking).permit(:start_date, :end_date, :message)
   end
 
   def set_space

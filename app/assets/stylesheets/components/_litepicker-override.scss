@@ -1,0 +1,14 @@
+.litepicker .container__days .day-item:hover {
+    color: $dark-green;
+    -webkit-box-shadow: inset 0 0 0 1px $dark-green;
+    box-shadow: inset 0 0 0 1px $dark-green;
+}
+
+.litepicker .container__days .day-item.is-start-date, .litepicker .container__days .day-item.is-end-date {
+    color: white;
+    background-color: $dark-green;
+}
+
+.litepicker .container__days .day-item.is-in-range {
+  background-color: $success;
+}
