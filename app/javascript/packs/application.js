@@ -31,8 +31,10 @@ import Litepicker from 'litepicker';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { init_litepicker } from '../plugins/init_litepicker';
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   init_litepicker();
+  initMapbox();
 });
