@@ -1,19 +1,19 @@
 </div>
-<div class="jumbotron jumbotron-fluid" style="background-image: linear-gradient(to top, rgba(180, 180, 180, 0.35) 0%,rgb(189, 195, 190) 100%), url(https://cdn.pixabay.com/photo/2016/11/22/19/24/archive-1850170_960_720.jpg
-)">
+<div class="banner">
   <div class="container">
-    <h1 class="display-4">Welcome to Acornr</h1>
-    <h3>Find a friendly corner to safely store your things.</h3>
-      <form class="form-inline">
-        <div class="form-group">
-          <input type="text" placeholder="Search for a space near you..." id="search-bar" class="form-control" aria-describedby="passwordHelpInline">
-          <input type="button" value="search" class="btn btn-success">
-        </div>
-      </form>
+    <h1>Welcome to Acornr</h1>
+    <h4>Find a friendly corner to safely store your things.</h4>
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" placeholder="Search for a space near you..." id="search-bar" class="form-control" aria-describedby="passwordHelpInline">
+        <input type="button" value="search" class="btn btn-success">
+      </div>
+    </form>
   </div>
 </div>
+
 <div class="container">
-<h2 class="mb-3">Recently created spaces.</h2>
+<h3 class="mb-3">Recently opened spaces.</h3>
 <div class="row">
   <% @spaces.each do |space| %>
     <%= render 'spaces/space-card', space: space %>
