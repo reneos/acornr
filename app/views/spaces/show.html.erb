@@ -1,9 +1,9 @@
 </div><!-- close container -->
 
-<div class="jumbotron space-show-header" style="background-image: linear-gradient(to top, rgba(180, 180, 180, 0.1) 0%,rgb(189, 195, 190) 100%), url(<%= cl_image_path @space.photo.key, crop: :fill %>)">
+<div class="jumbotron space-show-header" style="background-image: linear-gradient(to top, rgba(0,0,0,.2) 0%,rgba(0,0,0,.2) 100%), url(<%= cl_image_path @space.photo.key, crop: :fill %>)">
   <div class="container">
     <h1 class="display-4"><%= @space.title %></h1>
-    <h3><%= @space.address %></h3>
+    <h3><i class="fas fa-map-pin"></i> <%= @space.address %></h3>
   </div>
 </div>
 
@@ -29,7 +29,7 @@
         <%= simple_form_for [@space, @booking] do |f| %>
           <%= f.input :start_date, readonly: true, as: :string, disabled: disabled %>
           <%= f.input :end_date, readonly: true, as: :string, disabled: disabled %>
-          <%= f.input :message, disabled: disabled %>
+          <%= f.input :message, label: "What do you want to store?", disabled: disabled %>
           <div id="total_price"></div>
           <%= f.submit "Request booking", class: "btn btn-success w-100", disabled: disabled %>
         <% end %>
