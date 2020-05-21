@@ -1,5 +1,5 @@
 </div>
-<div class="banner">
+<div class="banner" style="background-image: linear-gradient(to top, rgba(0,0,0,.2) 0%,rgba(0,0,0,.2) 100%), url(<%= image_path'banner.jpg', crop: :fill %>)">
   <div class="container">
     <h1>Welcome to Acornr</h1>
     <h4>Find a friendly corner to safely store your things.</h4>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="container">
-<h3 class="mb-3">Recently opened spaces.</h3>
+<h3 class="mb-3">Recently opened spaces</h3>
 <div class="row">
   <% @spaces.each do |space| %>
     <%= render 'spaces/space-card', space: space %>

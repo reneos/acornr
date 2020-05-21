@@ -1,11 +1,11 @@
 
 .nav-link {
   color: $dark-green;
+  &:hover {
+    background-color: #DEDDE2;
+    color: $dark-green;
+  }
 }
-// .nav-link:active {
-//   background-color: $dark-green!important;
-//   color: $green!important;
-// }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: $green;
   background-color: $dark-green;
