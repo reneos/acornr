@@ -22,7 +22,7 @@
 
   <div class="col-12 col-md-4 col-lg-4 space-show-right-column">
     <div class="container pt-4">
-      <div class="space-show-pricing"><span class="pricing">$<%= @space.price %></span> per day</div>
+      <div class="space-show-pricing"><span class="pricing">¥<%= @space.price %></span> per day</div>
       <h2>Request Booking</h2>
       <div class="bookings-form" data-unavailable="<%= @space.unavailable_dates.to_json %>" data-price="<%= @space.price %>">
         <% disabled = !policy(@booking).create? %>

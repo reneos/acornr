@@ -1,18 +1,22 @@
 <div class="container">
-  <div class="row">
-  <div class="col-md-5 offset-md-3 mt-5 mb-4">
+  <div class="row justify-content-center">
+  <div class="col-12 col-md-8 mt-5">
     <h1>Create Space</h1>
   <%= simple_form_for(space) do |f| %>
   <div>
     <div class="simple-form">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :price %>
+    <%= f.input :title, label: ('<i class="fas fa-marker"></i> Title').html_safe %>
+    <small class="form-text mb-4">Give your space a descriptive title.</small>
+    <%= f.input :description, label: ('<i class="fas fa-archive"></i> What are you able to store?').html_safe %>
+    <small class="form-text mb-4">Give a short description of what you are able to store in your space.</small>
+    <%= f.input :address, label: ('<i class="fas fa-map-pin"></i> Address').html_safe %>
+    <%= f.input :price, label: ('<i class="fas fa-tag"></i> Price per day (¥)').html_safe %>
+    <%= image_tag "", class: "hidden mx-auto my-3", id: "photo-preview" %>
+    <%= f.input :photo, input_html: { id: 'photo-input' }, label: ('<i class="fas fa-user"></i> Upload a Photo').html_safe, as: :file %>
     <div class="mb-3 mt-3">
     <%= f.submit "Create space", class:"btn btn-success"%>
      </div>
-      <%= f.input :photo, as: :file %>
+
   </div>
   </div>
 <% end %>
