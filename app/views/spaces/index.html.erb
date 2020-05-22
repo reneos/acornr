@@ -14,10 +14,11 @@
         <div class="ml-2 d-flex flex-column justify-content-between">
           <div class="content">
             <h2><%= space.title %></h2>
-            <p><%= space.address %></p>
-            <p><span class="emphasize">¥<%= space.price %> per day</span></p>
+            <p class="space-index-address"><%= space.address %></p>
+
           </div>
           <div class="buttons">
+            <span class="emphasize">¥<%= space.price %> per day</span>
             <%= link_to space_path(space), class: "btn btn-success" do %>
               <i class="far fa-eye"></i> View space
             <% end %>

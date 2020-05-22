@@ -41,9 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   initFileUpload();
   init_litepicker();
-  if (document.querySelector('#map')) {
-    initMapbox();
-  }
-
+  initMapbox();
 });
+
 
