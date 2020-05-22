@@ -32,9 +32,14 @@ import Litepicker from 'litepicker';
 // import { initSelect2 } from '../components/init_select2';
 import { init_litepicker } from '../plugins/init_litepicker';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  initAutocomplete();
   init_litepicker();
   initMapbox();
 });
+

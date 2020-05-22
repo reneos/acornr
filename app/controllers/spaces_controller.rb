@@ -1,6 +1,12 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = policy_scope(Space).geocoded
+    if params[:search]
+      coords = params[:search][:coords].split('-').map(&:to_f)
+      @spaces = policy_scope(Space).near(coords)
+      @place = params[:search][:place]
+    else
+      @spaces = policy_scope(Space).geocoded
+    end
     @markers = @spaces.map do |space|
       {
         lat: space.latitude,

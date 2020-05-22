@@ -1,42 +1,35 @@
-<div class="row mt-5 mb-5">
-  <div class="col">
+</div>
+<div class="dbanner" style="background-image: linear-gradient(to top, rgba(0,0,0,.4) 0%,rgba(0,0,0,.4) 100%), url(<%= image_path'dbanner.jpg', crop: :fill %>)">
+  <div class="container">
     <h1>Your Dashboard</h1>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-2">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
-      <a class="nav-link active" id="v-pills-bookings-tab" data-toggle="pill" href="#v-pills-bookings" role="tab" aria-controls="v-pills-bookings" aria-selected="true">Bookings <i class="fas fa-concierge-bell"></i></a>
-
-      <a class="nav-link" id="v-pills-spaces-tab" data-toggle="pill" href="#v-pills-spaces" role="tab" aria-controls="v-pills-spaces" aria-selected="false">Spaces <i class="fas fa-warehouse"></i></a>
-
-      <a class="nav-link" id="v-pills-hostings-tab" data-toggle="pill" href="#v-pills-hostings" role="tab" aria-controls="v-pills-hostings" aria-selected="false">Hostings <i class="fas fa-boxes"></i></a>
+<div class="container">
+  <div class="row d-flex">
+    <div class="col-2">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-bookings-tab" data-toggle="pill" href="#v-pills-bookings" role="tab" aria-controls="v-pills-bookings" aria-selected="true">Bookings <i class="fas fa-concierge-bell"></i></a>
+        <a class="nav-link" id="v-pills-spaces-tab" data-toggle="pill" href="#v-pills-spaces" role="tab" aria-controls="v-pills-spaces" aria-selected="false">Spaces <i class="fas fa-warehouse"></i></a>
+        <a class="nav-link" id="v-pills-hostings-tab" data-toggle="pill" href="#v-pills-hostings" role="tab" aria-controls="v-pills-hostings" aria-selected="false">Hostings <i class="fas fa-boxes"></i></a>
+      </div>
     </div>
-  </div>
 
-
-
-  <div class="col-10">
-    <div class="tab-content" id="v-pills-tabContent">
-
-      <div class="tab-pane fade show active" id="v-pills-bookings" role="tabpanel" aria-labelledby="v-pills-bookings-tab">
-        <%= render 'renter_bookings' %>
-      </div>
-
-      <div class="tab-pane fade" id="v-pills-spaces" role="tabpanel" aria-labelledby="v-pills-spaces-tab">
-        <%= render 'host_spaces' %>
-      </div>
-
-      <div class="tab-pane fade" id="v-pills-hostings" role="tabpanel" aria-labelledby="v-pills-hostings-tab">
-        <%= render 'host_bookings' %>
+    <div class="col-10">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-bookings" role="tabpanel" aria-labelledby="v-pills-bookings-tab">
+          <%= render 'renter_bookings' %>
+        </div>
+        <div class="tab-pane fade" id="v-pills-spaces" role="tabpanel" aria-labelledby="v-pills-spaces-tab">
+          <%= render 'host_spaces' %>
+        </div>
+        <div class="tab-pane fade" id="v-pills-hostings" role="tabpanel" aria-labelledby="v-pills-hostings-tab">
+          <%= render 'host_bookings' %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
 
 
 

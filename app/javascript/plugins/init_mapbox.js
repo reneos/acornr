@@ -5,11 +5,13 @@ const mapElement = document.getElementById('map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-  return new mapboxgl.Map({
+  const newMap = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mapbox/streets-v10',
   });
+  return newMap;
 };
+
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
@@ -23,19 +25,26 @@ const addMarkersToMap = (map, markers) => {
 };
 
 const fitMapToMarkers = (map, markers) => {
-  const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+  if (markers.length === 1) {
+    map.flyTo( { center: [markers[0].lng, markers[0].lat], zoom: 15, speed: 3 } );
+  } else {
+    const bounds = new mapboxgl.LngLatBounds();
+    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+    map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+  }
 };
 
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
+    if (markers.length > 0) {
+      addMarkersToMap(map, markers);
+      fitMapToMarkers(map, markers);
+    }
+    map.resize();
     map.addControl(new MapboxGeocoder({ accessToken: mapElement.dataset.mapboxApiKey,
-                                  mapboxgl: mapboxgl }));
+                                mapboxgl: mapboxgl }));
     const list = document.querySelectorAll('.map-button');
     list.forEach((space) => {
       space.addEventListener('click',(e) => {
@@ -46,5 +55,6 @@ const initMapbox = () => {
     });
   }
 };
+
 
 export { initMapbox };

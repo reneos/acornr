@@ -1,3 +1,13 @@
 .booking-card-price {
   padding: 8px 16px;
 }
+.card {
+  border-radius: 4px;
+  border: none;
+}
+
+.card-header:first-child {
+  color: white;
+  background-color: $dark-green;
+  border-radius: 4px 4px 0px 0px;
+}
