@@ -3,6 +3,9 @@
   background-position: center;
   padding: 150px 0;
   margin-bottom: 12px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
 }
 
 .banner h1 {
@@ -28,6 +31,8 @@
 }
 
 .dbanner {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 100px 0;
