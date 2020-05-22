@@ -1,4 +1,4 @@
 <h2><%= link_to space.title, space_path(space) %></h2>
-<%= cl_image_tag space.photo.key, alt: space.title, width: 600, height: 600 %>
+<%= cl_image_tag space.photo.key, alt: space.title, width: 300, height: 300 %>
 <div class="mt-1"><i class="fas fa-map-pin"></i> <%= space.address %></div>
-<div><span class="emphasize">$<%= space.price %> / day</span></div>
+<div><span class="emphasize">¥<%= space.price %> / day</span></div>
