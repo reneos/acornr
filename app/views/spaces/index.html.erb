@@ -15,7 +15,7 @@
           <div class="content">
             <h2><%= space.title %></h2>
             <p><%= space.address %></p>
-            <p><span class="emphasize">$<%= space.price %> per day</span></p>
+            <p><span class="emphasize">¥<%= space.price %> per day</span></p>
           </div>
           <div class="buttons">
             <%= link_to space_path(space), class: "btn btn-success" do %>
@@ -33,7 +33,7 @@
     <% end %>
   </ul>
 </div>
-  
+
 <div class="col-6" style="height: 100%; flex: 1; overflow: hidden;">
  <div id="map" style="width: 100%; height: 100vh; overflow: hidden;"
      data-markers="<%= @markers.to_json %>"

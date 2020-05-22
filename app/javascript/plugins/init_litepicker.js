@@ -3,7 +3,7 @@ const calculate_price = (date1, date2) => {
   const price = parseInt(document.querySelector('.bookings-form').dataset.price, 10);
   const days = (date2.getTime() - date1.getTime()) / (1000 * 3600 * 24);
   const totalPriceBox = document.querySelector('#total_price');
-  const content = `<span class="emphasize">Total:</span> $${price * days} for ${days} days`;
+  const content = `<span class="emphasize">Total:</span> ¥${price * days} for ${days} days`;
   totalPriceBox.innerHTML = content;
   totalPriceBox.style.display = "block"
 }

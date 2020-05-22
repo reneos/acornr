@@ -33,13 +33,17 @@ import Litepicker from 'litepicker';
 import { init_litepicker } from '../plugins/init_litepicker';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
-
+import { initFileUpload } from '../plugins/init_fileinput';
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initAutocomplete();
+  initFileUpload();
   init_litepicker();
-  initMapbox();
+  if (document.querySelector('#map')) {
+    initMapbox();
+  }
+
 });
 

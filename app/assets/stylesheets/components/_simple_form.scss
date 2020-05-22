@@ -1,29 +1,64 @@
 .simple-form {
   font-family: Raleway;
+  label {
+    font-size: 1.2em;
+    margin-top: 1.5em;
+  }
+  small {
+    font-size: 1em;
+  }
+  i {
+    margin-right: .5em;
+  }
 }
 #space_title {
   background-color: white;
   border-radius: 10px;
-  color: white;
+  color: $dark-green;
   box-shadow: 2px 2px 1px #e4e4e4;
 }
 #space_description {
   background-color: white;
   border-radius: 10px;
-  color: white;
+  color: $dark-green;
   box-shadow: 2px 2px 1px #e4e4e4;
 }
 
 #space_address {
   background-color: white;
   border-radius: 10px;
-  color: white;
+  color: $dark-green;
   box-shadow: 2px 2px 1px #e4e4e4;
 }
 
 #space_price {
   background-color: white;
   border-radius: 10px;
-  color: white;
+  color: $dark-green;
+  box-shadow: 2px 2px 1px #e4e4e4;
+}
+
+.form-control-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+label.file {
+  padding: 8px 12px;
+  background-color: white;
+  border-radius: 10px;
+  color: $dark-green;
+  box-shadow: 2px 2px 1px #e4e4e4;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#photo-preview {
+  width: 100%;
   box-shadow: 2px 2px 1px #e4e4e4;
 }
