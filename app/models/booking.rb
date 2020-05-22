@@ -16,14 +16,14 @@ class Booking < ApplicationRecord
 
   def dates_valid
     return unless start_date && end_date
-    errors.add(:end_date, "start date must be before end date") if end_date <= start_date
+    errors.add(:end_date, "must be after start date") if end_date <= start_date
   end
 
    def availability
     # exclude end date in range because you can start on the same day another booking ends
     other_bookings_ranges = space.bookings.reject { |b| b == self }.map { |b| (b.start_date...b.end_date) }
     if other_bookings_ranges.any? { |range| range.overlaps?(start_date...end_date) }
-      errors.add(:start_date, "dates overlap with another booking")
+      errors.add(:start_date, "and end date range overlap with another booking")
     end
   end
 
