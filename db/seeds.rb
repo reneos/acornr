@@ -19,87 +19,87 @@ puts 'About to create 5 users'
   user.save!
 end
 
-puts 'Created 5 users'
+puts 'Created 6 users'
 
 
-puts 'About to create 5 spaces'
+puts 'About to create 6 spaces'
 
-garage = "https://images.unsplash.com/photo-1532884988337-3c5dca28cccc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-closet ="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-white_closet = "https://images.unsplash.com/photo-1580792025119-484e27370138?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
-house_garage = "https://images.unsplash.com/flagged/photo-1566838616793-29a4102a5b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-parking_lot = "https://images.unsplash.com/photo-1508465487720-54cef28cc719?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80"
-small_shed = "https://images.unsplash.com/photo-1507035159636-7a86eb324885?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1613&q=80"
+garage = "https://buildingindonesia.co.id/wp-content/uploads/2019/07/3Y1A6296-a.jpg"
+closet ="https://i.pinimg.com/originals/ff/ee/7c/ffee7c9ae389da06ca729043ee96fc78.jpg"
+loft = "https://i.pinimg.com/originals/7f/c0/d2/7fc0d2174ce54a32eb83df38299ecbee.jpg"
+living_room = "https://images.adsttc.com/media/images/573c/ef49/e58e/ceb3/1100/009a/large_jpg/frontofficetokyo_-_akasaka_-_bed_02.jpg?1463611197"
+tatami = "https://uploads.greatideahub.com/uploads/2017/11/AdobeStock_113548908-1200x800.jpeg"
+downstairs = "https://images.adsttc.com/media/images/530d/48f9/c07a/80ed/3b00/008a/large_jpg/02.jpg?1393379556"
 
 users = User.all
 
 space = Space.new(
-  title: "Shelving in Stock Room",
-  address: "Tokyo, Japan",
+  title: "Brand new garage",
+  address: "1-chōme-7-5 Shimomeguro Meguro City, Tōkyō-to 153-0064",
   user: users.sample,
-  description: "I have a spacious storage room at the back of my shop that has some empty shelves available for short-term storage. I'm willing to store sealed cardboard boxes, but nothing perishable, please.",
-  price: rand(3..10)
+  description: "I have a spacious storage area in my garage that has some empty shelves available for short-term storage. I'm willing to store sealed cardboard boxes, but nothing perishable, please.",
+  price: rand(3..10)*100 #USD->Yen
 )
 file = URI.open(garage)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
 space.save!
 
 space = Space.new(
-  title: "Convenient Clothing Storage",
-  address: "Osaka, Japan",
+  title: "Empty space in closet",
+  address: "4 Chome-4-27, Meguro City, Tokyo 150-0042",
   user: users.sample,
-  description: "A generously sized walk-in closet area available for storing a variety of garments safely and securely (infrequently worn formalwear, bulky winter jackets, etc.) The closet is in my home and I'm available throughout the year.",
-  price: rand(3..10)
+  description: "A generously sized closet available for storing a variety of garments safely and securely (infrequently worn formalwear, bulky winter jackets, etc.) The closet is in my home and I'm available throughout the year.",
+  price: rand(3..10)*100 #USD->Yen
 )
 file = URI.open(closet)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
 space.save!
 
 space = Space.new(
-  title: "Immaculate Closet",
-  address: "Kyoto, Japan",
+  title: "Graduate student with extra space",
+  address: "2 Chome-1-28 Minato City, Tokyo 108-0073",
   user: users.sample,
-  description: "I have a guest bedroom with a completely empty closet, waiting to store your belongings. Boxes, (clean) bicycles, clothes, shoes other such items are acceptable. The area is very secure and my home is very well maintained, so your items will be safe with me.",
-  price: rand(3..10)
+  description: "I have a loft with some space, waiting to store your belongings. Boxes, (clean) bicycles, clothes, shoes other such items are acceptable. The area is very secure and my home is very well maintained, so your items will be safe with me.",
+  price: rand(3..10)*100 #USD->Yen
 )
-file = URI.open(white_closet)
+file = URI.open(loft)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
 space.save!
 
 space = Space.new(
-  title: "Summer Storage Garage",
-  address: "Kobe, Japan",
+  title: "Minimalist salary man",
+  address: "3-18-2 Yanaka Taito-ku Tokyo-to",
   user: users.sample,
-  description: "I have a large garage that I'm willing to lease out for storage for the summer months (now until September). You can fit a medium-sized car or other boxes, etc. Let me know.",
-  price: rand(3..10)
+  description: "I have a minimalist lifestyle, and I'm willing to lease out some of my living room space for storage for the summer months (now until September). You can fit a multiple large-sized boxes, etc. Let me know.",
+  price: rand(3..10)*100 #USD->Yen
 )
-file = URI.open(house_garage)
+file = URI.open(living_room)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
 space.save!
 
 space = Space.new(
-  title: "Parking space",
-  address: "Kumamoto, Japan",
+  title: "Tatami space",
+  address: "3 Chome-55-10 Ikebukuro, Toshima City, Tokyo 171-0014",
   user: users.sample,
-  description: "I'm not going to be using my parking space between now and August 31st. It's close to city center and the entrance ot the parking lot is monitored via camera 24/7 so it's very secure.",
-  price: rand(3..10)
+  description: "I'm not going to be using my tatami space in my new apartment. It's clean and cushioned so your things won't be easily damaged. I'm located close to the city center for easy drop off and pick up.",
+  price: rand(3..10)*100 #USD->Yen
 )
-file = URI.open(parking_lot)
+file = URI.open(tatami)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
 space.save!
 
 space = Space.new(
-  title: "Shed",
-  address: "Hakone, Japan",
+  title: "Family home storage",
+  address: "3 Chome-5-6 Misakicho, Chiyoda City, Tokyo 101-0061",
   user: users.sample,
-  description: "A shed in my backyard has been sitting empty for some months, so I'm leasing it for storage. Mostly anything is acceptable, as long as it will fit through the door (measures 5ft by 8ft). Long term storage is OK.",
-  price: rand(3..10)
+  description: "I live with my wife and 1 year old son. We have an empty room in our basement, so I'm leasing it for storage. Mostly anything is acceptable, as long as it will fit through the door (measures 5ft by 8ft). Long term storage is OK.",
+  price: rand(3..10)*100 #USD->Yen
 )
-file = URI.open(small_shed)
+file = URI.open(downstairs)
 space.photo.attach(io: file, filename: 'space.png', content_type: 'image/png')
 space.save!
 
-puts 'Created 5 spaces.'
+puts 'Created 6 spaces.'
 
 
 puts "About to create 15 bookings"
