@@ -13,6 +13,9 @@
 .navbar {
   background-color: $dark-green;
   height: 64px;
+  position: sticky;
+  top:0;
+  z-index: 9999;
 }
 .nav-text {
   font-weight: bold;
