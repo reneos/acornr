@@ -17,8 +17,11 @@
             <li><%= link_to "Dashboard", dashboard_index_path, class: "nav-text" %></li>
           </div>
         </div>
-        <li class="avatar-logo">
-          <%= image_tag "useravatar.png", class: "avatar"%>
+        <li class="avatar-logo nav-item dropdown">
+          <%= image_tag "useravatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        </div>
         </li>
       <% else %>
         <li class="nav-text">
