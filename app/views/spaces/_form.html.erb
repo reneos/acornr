@@ -11,7 +11,7 @@
     <small class="form-text mb-4">Give a short description of what you are able to store in your space.</small>
     <%= f.input :address, label: ('<i class="fas fa-map-pin"></i> Address').html_safe %>
     <%= f.input :price, label: ('<i class="fas fa-tag"></i> Price per day (¥)').html_safe %>
-    <%= image_tag "", width: 500, class: "hidden mx-auto my-3", id: "photo-preview" %>
+    <%= image_tag "", class: "hidden mx-auto my-3", id: "photo-preview" %>
     <%= f.input :photo, input_html: { id: 'photo-input' }, label: ('<i class="fas fa-user"></i> Upload a Photo').html_safe, as: :file %>
     <div class="mb-3 mt-3">
     <%= f.submit "Create space", class:"btn btn-success"%>
